@@ -45,8 +45,7 @@ RUN cd / \
 
 # Download the CAS overlay project \
 RUN cd / \
-    && git clone --depth 1 --single-branch https://github.com/apereo/cas-overlay-template.git cas-overlay \
-    && mkdir -p /etc/cas \
+    && git clone --depth 1 --single-branch -branch 5.3 https://github.com/jcampoy/cas-overlay-template.git cas-overlay \
     && mkdir -p cas-overlay/bin;
 
 COPY thekeystore /etc/cas/
