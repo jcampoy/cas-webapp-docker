@@ -1,6 +1,14 @@
 #!/bin/bash
 cas_version=$1
 
+
+KEYSTORE=$(pwd)/thekeystore
+
+echo "Keystore: $KEYSTORE"
+
+. ./cert/updatekeystore.sh $KEYSTORE
+
+
 if [ $# -eq 0 ] || [ -z "$cas_version" ]
   then
     echo "No CAS version is specified."

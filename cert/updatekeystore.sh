@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYSTORE=../thekeystore
+KEYSTORE=$1
 
 CERT_NAME=cas
 
