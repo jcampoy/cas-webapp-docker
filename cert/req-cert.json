@@ -1,0 +1,22 @@
+{
+    "CN": "example.net",
+    "hosts": [
+        "site1.dev",
+        "site2.dev",
+        "site3.dev",
+        "portal1.dev",
+        "portal2.dev",
+        "portal3.dev",
+        "cas1.dev"
+    ],
+    "key": {
+        "algo": "ecdsa", 
+        "size": 256
+    },
+    "names": [
+        {
+            "C": "US", 
+            "L": "San Francisco"
+        }
+    ]
+}
