@@ -25,7 +25,7 @@ if [ ! -f cas-keystore-src.p12 ]; then
     fi
 
     openssl pkcs12 -export -inkey cas-key.pem -in cas.pem  -name cas -out cas-keystore-src.p12
-    keytool -storepass changeit -importkeystore -srckeystore cas-keystore-src.p12 -srcstoretype pkcs12 -destkeystore $KEYSTORE 
+    keytool -storepass changeit -importkeystore -srckeystore cas-keystore-src.p12 -srcstoretype pkcs12 -destkeystore $KEYSTORE
     keytool -list -keystore $KEYSTORE -v -storepass changeit
 
 else 
