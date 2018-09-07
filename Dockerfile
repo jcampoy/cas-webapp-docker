@@ -12,7 +12,6 @@ RUN set -x; \
     java_version=8.0.131; \
     zulu_version=8.21.0.1; \
     java_hash=1931ed3beedee0b16fb7fd37e069b162; \
-    
     cd / \
     && wget http://cdn.azul.com/zulu/bin/zulu$zulu_version-jdk$java_version-linux_x64.tar.gz \
     && echo "$java_hash  zulu$zulu_version-jdk$java_version-linux_x64.tar.gz" | md5sum -c - \
@@ -46,9 +45,10 @@ RUN cd / \
 # Download the CAS overlay project \
 RUN cd / \
     && git clone --depth 1 --single-branch --branch 5.3 https://github.com/jcampoy/cas-overlay-template.git cas-overlay \
-    && mkdir -p cas-overlay/bin;
+    && mkdir -p cas-overlay/bin \
+    && ln -s /cas-overlay/etc/cas /etc/cas
 
-COPY thekeystore /etc/cas/
+COPY thekeystore /cas-overlay/etc/cas/
 COPY bin/*.* cas-overlay/bin/
 COPY etc/cas/config/*.* /cas-overlay/etc/cas/config/
 COPY etc/cas/services/*.* /cas-overlay/etc/cas/services/
