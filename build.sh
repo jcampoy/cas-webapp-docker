@@ -6,8 +6,7 @@ KEYSTORE=$(pwd)/thekeystore
 
 echo "Keystore: $KEYSTORE"
 
-. ./cert/updatekeystore.sh $KEYSTORE
-
+#. ./cert/updatekeystore.sh $KEYSTORE
 
 if [ $# -eq 0 ] || [ -z "$cas_version" ]
   then
