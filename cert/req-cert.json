@@ -1,6 +1,7 @@
 {
-    "CN": "example.net",
+    "CN": "xcamp.liferay.org.es",
     "hosts": [
+        "xcamp.liferay.org.es",
         "site1.dev",
         "site2.dev",
         "site3.dev",
@@ -15,8 +16,8 @@
     },
     "names": [
         {
-            "C": "US", 
-            "L": "San Francisco"
+            "C": "ES",
+            "L": "Madrid"
         }
     ]
 }
