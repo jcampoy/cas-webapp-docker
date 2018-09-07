@@ -14,7 +14,7 @@ if [[ "$CURRENT" != */cert ]] ; then
     fi
 fi
 
-if [ ! -f cas.p12 ]; then
+if [ ! -f cas-keystore-src.p12 ]; then
 
     # Generate certificates for the Custom Root CA
     # cas.pem - your certificate
@@ -24,9 +24,8 @@ if [ ! -f cas.p12 ]; then
         cfssl gencert --remote https://support-ssl.wedeploy.io req-cert.json  | cfssljson -bare $CERT_NAME - 
     fi
 
-    cat cas.pem RootCA/ca.pem > cas-all-certs.pem
-    openssl pkcs12 -export -inkey cas-key.pem -in cas-all-certs.pem  -name cas -out cas-all.p12
-    keytool -storepass changeit -importkeystore -srckeystore cas-all.p12 -srcstoretype pkcs12 -destkeystore $KEYSTORE 
+    openssl pkcs12 -export -inkey cas-key.pem -in cas.pem  -name cas -out cas-keystore-src.p12
+    keytool -storepass changeit -importkeystore -srckeystore cas-keystore-src.p12 -srcstoretype pkcs12 -destkeystore $KEYSTORE 
     keytool -list -keystore $KEYSTORE -v -storepass changeit
 
 else 
