@@ -15,7 +15,8 @@ A docker image for CAS server. Images are tagged to match CAS server releases.
 
 ## Configuration
 
-* Add custom CAS configuration in etc/cas
+* Add custom CAS configuration in `etc/cas`
+* Add custom configuration for demo SSL certificates in `cert/req-cert.json`
 * The build auto-copy configuration files under the `etc/cas` directory to the corresponding locations inside the image.
 
 ### Image
@@ -41,7 +42,7 @@ to CAS server versions.
 ./build.sh $CasVersion
 ```
 
-The image will be built as `apereo/cas:v$CasVersion`.
+The image will be built as `$docker_user/cas:v$CasVersion`.
 
 ## Run
 
@@ -53,7 +54,7 @@ The image will be built as `apereo/cas:v$CasVersion`.
 
 * New images shall be released at the time of a new CAS server release.
 * Image versions are reflected in the `build|run.sh` files and need to be updated per CAS/Image release.
-* Images are published to [https://hub.docker.com/r/apereo/cas/](https://hub.docker.com/r/apereo/cas/)
+
 
 ```bash
 ./push.sh $CasVersion
